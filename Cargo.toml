@@ -1,0 +1,14 @@
+[package]
+name = "minhook_raw"
+version = "0.1.3"
+edition = "2021"
+license = "Unlicense"
+description = "Minhook binding for rust"
+repository = "https://github.com/vSylva/minhook_raw"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["x86_64-pc-windows-msvc", "i686-pc-windows-msvc"]
+
+[build-dependencies]
+cc = "1.0.79"
