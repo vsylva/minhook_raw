@@ -31,7 +31,7 @@ pub enum MH_STATUS {
     MH_ERROR_FUNCTION_NOT_FOUND,
 }
 
-#[allow(dead_code)]
+#[link(name = "minhook")]
 extern "system" {
 
     pub fn MH_Initialize() -> MH_STATUS;
