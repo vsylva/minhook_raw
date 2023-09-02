@@ -1,8 +1,8 @@
 [package]
 name = "minhook_raw"
-version = "0.1.5"
+version = "0.2.0"
 edition = "2021"
-license = "Unlicense"
+license = "MIT"
 description = "Minhook binding for rust"
 repository = "https://github.com/vSylva/minhook_raw"
 
