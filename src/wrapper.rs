@@ -51,6 +51,24 @@ impl From<crate::sys::MH_STATUS> for Status {
     }
 }
 
+impl PartialEq<Status> for bool {
+    fn eq(&self, other: &Status) -> bool {
+        self == &match other {
+            Status::Ok => true,
+            _ => false,
+        }
+    }
+}
+
+impl PartialEq<bool> for Status {
+    fn eq(&self, other: &bool) -> bool {
+        &match self {
+            Status::Ok => true,
+            _ => false,
+        } == other
+    }
+}
+
 impl std::fmt::Display for Status {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{:?}", self)
