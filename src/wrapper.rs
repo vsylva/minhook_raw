@@ -69,8 +69,8 @@ impl PartialEq<bool> for Status {
     }
 }
 
-impl std::fmt::Display for Status {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl core::fmt::Display for Status {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "{:?}", self)
     }
 }
@@ -78,7 +78,7 @@ impl std::fmt::Display for Status {
 impl Status {
     #[inline]
     pub fn is_ok(&self) -> bool {
-        *self == Status::Ok
+        self == &Status::Ok
     }
 
     #[inline]
@@ -88,7 +88,7 @@ impl Status {
 
     #[inline]
     pub fn is_unk(&self) -> bool {
-        *self == Status::Unknown
+        self == &Status::Unknown
     }
 }
 
