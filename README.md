@@ -1,16 +1,8 @@
-minhook_raw
-===
+[![Crates.io Version](https://img.shields.io/crates/v/minhook_raw?style=for-the-badge)](https://crates.io/crates/minhook_raw)
 
-[![Crates.io](https://img.shields.io/crates/v/minhook_raw)](https://crates.io/crates/minhook_raw)
-
-minhook source: <https://github.com/TsudaKageyu/minhook>
-
-build.rs is inspired by: <https://github.com/veeenu/hudhook/blob/main/build.rs>
+[build.rs](https://github.com/veeenu/hudhook/blob/main/build.rs)
 
 ```rust
-use minhook_raw::wrapper as minhook;
-```
-
-```rust
-use minhook_raw::sys as minhook;
+use minhook_raw::*;
+// use minhook_raw::sys::*;
 ```
