@@ -6,35 +6,35 @@ extern "C" {
     pub fn MH_Uninitialize() -> MH_STATUS;
 
     pub fn MH_CreateHook(
-        pTarget: *mut core::ffi::c_void,
-        pDetour: *mut core::ffi::c_void,
-        ppOriginal: *mut *mut core::ffi::c_void,
+        pTarget: *mut ::std::ffi::c_void,
+        pDetour: *mut ::std::ffi::c_void,
+        ppOriginal: *mut *mut ::std::ffi::c_void,
     ) -> MH_STATUS;
 
     pub fn MH_CreateHookApi(
         pszModule: *const u16,
         pszProcName: *const i8,
-        pDetour: *mut core::ffi::c_void,
-        ppOriginal: *mut *mut core::ffi::c_void,
+        pDetour: *mut ::std::ffi::c_void,
+        ppOriginal: *mut *mut ::std::ffi::c_void,
     ) -> MH_STATUS;
 
     pub fn MH_CreateHookApiEx(
         pszModule: *const u16,
         pszProcName: *const i8,
-        pDetour: *mut core::ffi::c_void,
-        ppOriginal: *mut *mut core::ffi::c_void,
-        ppTarget: *mut *mut core::ffi::c_void,
+        pDetour: *mut ::std::ffi::c_void,
+        ppOriginal: *mut *mut ::std::ffi::c_void,
+        ppTarget: *mut *mut ::std::ffi::c_void,
     ) -> MH_STATUS;
 
-    pub fn MH_RemoveHook(pTarget: *mut core::ffi::c_void) -> MH_STATUS;
+    pub fn MH_RemoveHook(pTarget: *mut ::std::ffi::c_void) -> MH_STATUS;
 
-    pub fn MH_EnableHook(pTarget: *mut core::ffi::c_void) -> MH_STATUS;
+    pub fn MH_EnableHook(pTarget: *mut ::std::ffi::c_void) -> MH_STATUS;
 
-    pub fn MH_DisableHook(pTarget: *mut core::ffi::c_void) -> MH_STATUS;
+    pub fn MH_DisableHook(pTarget: *mut ::std::ffi::c_void) -> MH_STATUS;
 
-    pub fn MH_QueueEnableHook(pTarget: *mut core::ffi::c_void) -> MH_STATUS;
+    pub fn MH_QueueEnableHook(pTarget: *mut ::std::ffi::c_void) -> MH_STATUS;
 
-    pub fn MH_QueueDisableHook(pTarget: *mut core::ffi::c_void) -> MH_STATUS;
+    pub fn MH_QueueDisableHook(pTarget: *mut ::std::ffi::c_void) -> MH_STATUS;
 
     pub fn MH_ApplyQueued() -> MH_STATUS;
 

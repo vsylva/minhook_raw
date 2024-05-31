@@ -80,8 +80,8 @@ impl PartialEq<bool> for Status {
     }
 }
 
-impl core::fmt::Display for Status {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         write!(f, "{:?}", self)
     }
 }
@@ -112,9 +112,9 @@ pub fn uninitialize() -> Status {
 }
 
 pub fn create_hook(
-    p_target: *mut core::ffi::c_void,
-    p_detour: *mut core::ffi::c_void,
-    pp_original: *mut *mut core::ffi::c_void,
+    p_target: *mut ::std::ffi::c_void,
+    p_detour: *mut ::std::ffi::c_void,
+    pp_original: *mut *mut ::std::ffi::c_void,
 ) -> Status {
     unsafe { crate::sys::MH_CreateHook(p_target, p_detour, pp_original).into() }
 }
@@ -122,8 +122,8 @@ pub fn create_hook(
 pub fn create_hook_api(
     psz_module: *const u16,
     psz_proc_name: *const i8,
-    p_detour: *mut core::ffi::c_void,
-    pp_original: *mut *mut core::ffi::c_void,
+    p_detour: *mut ::std::ffi::c_void,
+    pp_original: *mut *mut ::std::ffi::c_void,
 ) -> Status {
     unsafe { crate::sys::MH_CreateHookApi(psz_module, psz_proc_name, p_detour, pp_original).into() }
 }
@@ -131,9 +131,9 @@ pub fn create_hook_api(
 pub fn create_hook_api_ex(
     psz_module: *const u16,
     psz_proc_name: *const i8,
-    p_detour: *mut core::ffi::c_void,
-    pp_original: *mut *mut core::ffi::c_void,
-    pp_target: *mut *mut core::ffi::c_void,
+    p_detour: *mut ::std::ffi::c_void,
+    pp_original: *mut *mut ::std::ffi::c_void,
+    pp_target: *mut *mut ::std::ffi::c_void,
 ) -> Status {
     unsafe {
         crate::sys::MH_CreateHookApiEx(psz_module, psz_proc_name, p_detour, pp_original, pp_target)
@@ -141,23 +141,23 @@ pub fn create_hook_api_ex(
     }
 }
 
-pub fn remove_hook(p_target: *mut core::ffi::c_void) -> Status {
+pub fn remove_hook(p_target: *mut ::std::ffi::c_void) -> Status {
     unsafe { crate::sys::MH_RemoveHook(p_target).into() }
 }
 
-pub fn enable_hook(p_target: *mut core::ffi::c_void) -> Status {
+pub fn enable_hook(p_target: *mut ::std::ffi::c_void) -> Status {
     unsafe { crate::sys::MH_EnableHook(p_target).into() }
 }
 
-pub fn disable_hook(p_target: *mut core::ffi::c_void) -> Status {
+pub fn disable_hook(p_target: *mut ::std::ffi::c_void) -> Status {
     unsafe { crate::sys::MH_DisableHook(p_target).into() }
 }
 
-pub fn queue_enable_hook(p_target: *mut core::ffi::c_void) -> Status {
+pub fn queue_enable_hook(p_target: *mut ::std::ffi::c_void) -> Status {
     unsafe { crate::sys::MH_QueueEnableHook(p_target).into() }
 }
 
-pub fn queue_disable_hook(p_target: *mut core::ffi::c_void) -> Status {
+pub fn queue_disable_hook(p_target: *mut ::std::ffi::c_void) -> Status {
     unsafe { crate::sys::MH_QueueDisableHook(p_target).into() }
 }
 
